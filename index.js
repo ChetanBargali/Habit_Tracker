@@ -4,10 +4,14 @@ const port=7000;
 
 const expressLayouts=require('express-ejs-layouts');
 
+const db=require('./config/mongoose');
 
 //set up view Engine
 app.set('view engine','ejs');
 app.set('views','./views');
+
+//use static files
+app.use(express.static('./Assets'));
 
 
 //use express router
