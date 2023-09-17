@@ -1,1 +1,24 @@
-<h1>header</h1>
+<link rel="stylesheet" href="/css/header.css">
+
+<div class="nav">
+    <div class="title"> 
+        <a href="/">Habit Tracker</a>
+    </div>
+    <% if (locals.user){ %>
+        <div class="userPresent">
+            <div class="nameOfUser"><%= user.name%>  </div>
+            <hr>
+            <div class="logOut"> <a href="/users/sign-out" > <i class="fa-solid fa-right-from-bracket"></i> </a> </div>
+        </div>
+        <%} else { %>
+            <div class="noUser">
+                
+                <a href="/users/sign-in"> Sign In </a> 
+                    <hr>
+                <a href="/users/sign-up"> Sign Up </a> 
+                
+            </div>
+        
+        <%}%>   
+
+</div>

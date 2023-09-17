@@ -1,3 +1,115 @@
 body{
-    background-color: cornflowerblue;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/home_bg.jpg');
+    background-size: cover;
+}
+
+.welcome-title{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 50px;
+    color: #108597;
+}
+
+.welcome-button{
+    width: 200px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    background: linear-gradient(to right, #16a085, #f4d03f);
+    margin-left: 41%;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: 0 0.5em 0.5em -0.4em  rgb(16, 133, 151);
+}
+
+.welcome-button:hover{
+    transform: translateY(-0.25em);
+}
+
+#noHabitText{
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    padding: 45px;
+    color: #108597;
+}
+
+#open-btn-fixed {
+    background-color: rgb(16, 133, 151);
+    color: white;
+    font-size: 18px;
+    padding: 12px 10px;
+    border: none;
+    cursor: pointer;
+    top: 50%;
+    left: 37%;
+    opacity: 0.8;
+    position: fixed;
+    width: 250px;
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(16, 133, 151);
+  }
+  
+#open-btn-fixed:hover{
+    transform: translateY(-0.25em);
+}
+
+
+.form-popup{
+  display: none;
+  position: fixed;
+  left: 20%;
+  top: 17%;
+  z-index: 4;
+  text-align: center;
+}
+
+.form-container{
+    width: 700px;
+    height: 300px;
+    padding: 10px;
+    background-color: rgba(16, 133, 151, 0.6);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-container input{
+    outline: none;
+}
+
+.form-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 15px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    font-size: 15px;
+}
+
+.form-container button {
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-bottom:10px;
+    opacity: 0.9;
+    font-size: 18px;
+    
+}
+.form-container #save-btn {
+    background-color: rgb(130, 189, 107);
+  }
+.form-container #cancel-btn {
+    background-color: rgb(241, 121, 109);
 }

@@ -1,13 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/home.css">
-</head>
-<body>
-    <%- include('_header'); -%>
-    <h1>home</h1>
-</body>
-</html>
+<link rel="stylesheet" href="/css/home.css">
+<script src="https://kit.fontawesome.com/3a77035c43.js" crossorigin="anonymous"></script>
+<!-- header  -->
+<%- include('_header'); %>
+
+<div>
+    <% if(!locals.user){ %>
+        <div class="welcome-title">
+            Consistency is the key to success. Start tracking, stay committed,<br> and watch your habits build a better you.
+       </div>
+       <form action="/users/sign-up" method="GET">
+           <button class="welcome-button">Get Started</button>
+       </form>
+    <% } else if(locals.user && locals.habits.length==0) { %><!----------- if no habits are added ----------->
+        <%= habits %>
+            <div id="noHabitText">Looks like you aren't tracking any habits yet, So...
+                   <br>Track your habits, transform your life. Every small step leads to a big change!
+            </div>
+            <!-- button to open add habit form  -->
+            <button id="open-btn-fixed" onclick="openForm()" > + Add Habit</button>
+            <div class="form-popup" id="myForm">
+                <form action="/users/habit/create-habit" id="createHabit" method="POST" class="form-container">
+                    <input type="text" name="title" placeholder="Enter habit title" required>
+                    <input type="text" name="desc" placeholder="Description">
+                    <button type="reset" id="cancel-btn" onclick="closeForm()">Cancel</button>
+                    <button type="submit" id="save-btn">Save</button>
+                </form>
+            </div>
+    <%}else{ %>  <!------------ show habits ------------>
+        <div>
+            <div>
+                
+                <!-- weekly view -->
+                <%- include('weekly_view'); %>
+                
+                <!-- daily view  -->
+                <%- include('daily_view'); %>
+
+            </div>
+        </div>
+    <% } %>
+
+</div>
+
+
+<script src="/js/home.js"></script>

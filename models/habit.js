@@ -15,7 +15,7 @@ const habitSchema = new mongoose.Schema({
     },
     dates: [{
         date: String,
-        complete: String
+        completed: String
     }]
 }, {
     timestamps: true,

@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #16a085, #f4d03f);
+    width: 100%;
+    height: 60px;
+}
+
+.title{
+    font-weight: 900;
+    padding: 10px;
+}
+
+.title a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+
+.userPresent{
+    display: flex;
+    font-weight: 600;
+}
+
+.nameOfUser{
+    font-size: 1.3rem;
+    padding: 10px;
+    margin: 4px;
+    color: #ffffff;
+}
+
+.logOut{    
+    font-size: 30px;
+    margin: 6px;
+    padding: 10px;
+}
+.logOut a{
+    text-decoration: none;
+    color: #ffffff
+}
+
+.noUser{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.noUser a{
+    font-size: 1.3rem;
+    padding: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff
+}
+
+.noUser a:hover {
+    text-decoration: underline 1px;
+    text-decoration-color: rgb(233, 252, 255);
+}

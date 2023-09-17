@@ -16,7 +16,7 @@ const MongoStore = require('connect-mongo');
 const db=require('./config/mongoose');
 
 
-app.use(express.urlencoded()); //URL-encoded data is commonly used when sending form data from a web page to a server.
+app.use(express.urlencoded({ extended: true })); //URL-encoded data is commonly used when sending form data from a web page to a server.
 app.use(cookieParser());
 
 //set up view Engine
