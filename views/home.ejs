@@ -37,6 +37,18 @@
                 <%- include('daily_view'); %>
 
             </div>
+             <!-- button to open add habit form  -->
+             <button id="open-btn" class="btn-addHabit" onclick="openForm()" > + Add Habit</button>
+             <div class="form-popup" id="myForm">
+                 <form action="/users/habit/create-habit" id="createHabit" method="POST" class="form-container">
+                     <input type="text" name="title" placeholder="Enter habit title" required>
+                     <input type="text" name="desc" placeholder="Description">
+                     <button type="reset" id="cancel-btn" onclick="closeForm()">Cancel</button>
+                     <button type="submit" id="save-btn">Save</button>
+                 </form>
+             </div>
+             <!-- button to toggle between daily/weekly view -->
+             <button id="change-view" class="btn-showdetails" onclick="changeView()" > Show Daily</button>
         </div>
     <% } %>
 

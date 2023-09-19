@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-image: url('/images/home_bg.jpg');
-    background-size: cover;
+    background-size: contain;
 }
 
 .welcome-title{
@@ -21,7 +21,6 @@ body{
     font-weight: 600;
     border: none;
     background: linear-gradient(to right, #16a085, #f4d03f);
-    margin-left: 41%;
     margin-top: 15px;
     cursor: pointer;
     box-shadow: 0 0.5em 0.5em -0.4em  rgb(16, 133, 151);
@@ -112,4 +111,113 @@ form{
   }
 .form-container #cancel-btn {
     background-color: rgb(241, 121, 109);
+}
+
+/* ---------- styles when habits are added ---------- */
+#open-btn {
+    margin-top: 30px;
+    left: 15%;
+    position: absolute;
+}
+#change-view {
+    margin-top: 30px;
+    left: 75%;
+    position: absolute;
+}
+
+.container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 200px;
+}
+
+.habit-title {
+    margin-top: 35px;
+    
+}
+
+
+
+.habit-container{
+    display: flex;
+    justify-content:space-evenly;
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 70%;
+    height: 90px;
+    margin-right: 150px;
+    padding: 5px;
+    margin-top: 20px;
+    
+}
+
+.day-container{
+    margin-right: 5px;
+}
+
+.calender {
+    display: flex;
+}
+.calender p {
+    margin-right: 30px;
+}
+
+.mark-status{
+    margin-left: 18px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.281);
+}
+
+.menu {
+    margin-top: 30px;
+}
+.menu i {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.menu i:hover {
+    transform: scale(1.15);
+}
+
+/* daily views */
+.daily-view .habit-container {
+    justify-content: space-between;
+
+}
+
+.mark-status-daily {
+    color: rgba(0, 0, 0, 0.281);
+    font-size: 28px;
+    margin-left: 18px;
+    margin-top: 27px;
+}
+
+.habit-desc {
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.btn-addHabit,.btn-showdetails{
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    height: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 18px;
+    position: relative;
+}
+.btn-showdetails{
+    margin: right 50px; ;
+}
+
+.btn-addHabit:hover{
+    transform: translateY(-0.25em);
+}
+.btn-showdetails:hover{
+    transform: translateY(-0.25em);
 }

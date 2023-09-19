@@ -12,6 +12,8 @@ router.post('/create-session', passport.authenticate(
     {failureRedirect: '/users/sign-in'},
 ), usersController.createSession);
 router.get('/sign-out', usersController.destroySession);
+
+router.use('/habit', require('./habit'));
 // takes to forget password page
 router.get('/forget-password', usersController.forgetPassword);
 // changes the password

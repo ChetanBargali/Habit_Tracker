@@ -5,9 +5,12 @@ const habitController=require('../controllers/habit_controller');
 
 
 //create new habit
-router.post('/users/habit/create-habit', habitController.createHabit);
+router.post('/create-habit', habitController.createHabit);
 
 // delete the habit
 router.get('/delete-habit', habitController.deleteHabit);
+
+// updates habit
+router.post('/edit-habit', habitController.editHabit);
 
 module.exports=router;
