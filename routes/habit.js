@@ -13,4 +13,8 @@ router.get('/delete-habit', habitController.deleteHabit);
 // updates habit
 router.post('/edit-habit', habitController.editHabit);
 
+//toggle action
+
+router.get('/toggle-status',habitController.toggleStatus);
+
 module.exports=router;
