@@ -30,9 +30,9 @@
                             <% if(found && status=='y') { %>
                                 <i class="fas fa-check-circle" ></i>
                             <% } else if(found && status=='n') { %>
-                                <i class="fas fa-times-circle" ></i>
+                                <i class="fas fa-times-circle" style="color: rgb(130, 189, 107)"></i>
                             <% } else { %>
-                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-circle" style="color: rgb(241, 121, 109)"></i>
                             <% } %>
                         </a>
                     </div>
@@ -41,7 +41,7 @@
             <!-- option to delete -->
             <div class="menu">
                 <a href="/users/habit/delete-habit/?id=<%=habit._id%>" style="text-decoration: none;">
-                    <i class="fa-regular fa-trash-can fa-lg" ></i>
+                    <i class="fa-regular fa-trash-can fa-lg" style="color: red;"></i>
                 </a>
             </div>
         </div>

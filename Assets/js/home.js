@@ -38,3 +38,17 @@ function changeView() {
     }
 }
     
+// open/close edit form
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (target.classList.contains('fa-pen-to-square')) {
+    const parent = target.parentNode;
+    const id = `myEditForm_${parent.id}`;
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  if (target.classList.contains('closeIt')) {
+    const id = target.parentNode.parentNode.id;
+    document.getElementById(id).style.display = 'none';
+  }
+})
