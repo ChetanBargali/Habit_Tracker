@@ -19,13 +19,13 @@ passport.use(
                 
                 // Check if user exists and password matches
                 if (!user || user.password !== password) {
-                    // req.flash('error','Invalid Username/Password!');
+                    req.flash('error','Invalid Username/Password!');
                     return done(null, false); // No user found or incorrect password
                 }
                 
                 return done(null, user); // User found and password matches
             } catch (err) {
-                // req.flash('error',err);
+                req.flash('error',err);
                 return done(err); // Pass the error to the done callback
             }
         }

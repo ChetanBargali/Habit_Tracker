@@ -1,23 +1,28 @@
 const Habit = require('../models/habit');
 const User = require('../models/user');
 
+// Function to create a new habit
 module.exports.createHabit = async function (req, res) {
     try {
+      // Check if a habit with the same title and user already exists
       let habit = await Habit.findOne({
         title: req.body.title,
         user: req.user._id,
       }).populate();
+
       if (habit) {
         console.log('Habit exists');
+        req.flash('success', 'Habit Already Exist!!!');
         return res.redirect('/');
       } else {
+        // Create a new habit if it doesn't exist
         let newHabit = await Habit.create({
           title: req.body.title,
           desc: req.body.desc,
           user: req.user._id,
-          dates: [{ date: await getTodayDate(), completed: "none" }],
+          dates: [{ date: await getTodayDate(), complete: "none" }],
         });
-  
+        req.flash('success', 'Habit Created Successfully');
         return res.redirect('/');
       }
     } catch (error) {
@@ -26,25 +31,25 @@ module.exports.createHabit = async function (req, res) {
     }
 }
 
-  // this fucntion will return the current data, which will helpful for getting the range of dates
+// Function to get the current date (formatted as day month)
 function getTodayDate(){
   var today = new Date();
   let date = today.getDate();
-  let month = today.getMonth()+1;
+  let month = today.getMonth() + 1;
 
   let fullDate = date + " " + month;
   return fullDate;
 }
-  
 
-// this function removes the habit
+// Function to delete a habit
 module.exports.deleteHabit = async function(req, res) {
     try {
         let id = req.query.id;
         let user = req.user._id;
 
-        await Habit.deleteOne({ _id : id, user: user });
-        // req.flash('success', 'Habit Deleted Successfully');
+        // Delete the habit with the given id and user
+        await Habit.deleteOne({ _id: id, user: user });
+        req.flash('success', 'Habit Deleted Successfully');
         return res.redirect('/');
         
     } catch (error) {
@@ -53,7 +58,7 @@ module.exports.deleteHabit = async function(req, res) {
     }
 }
 
-// this function will edit the habit title/desc
+// Function to edit a habit's title/description
 module.exports.editHabit = async function(req, res) {
   try {
       let newTitle = req.body.title;
@@ -61,6 +66,7 @@ module.exports.editHabit = async function(req, res) {
       let id = req.query.id;
       let user = req.user._id;
 
+      // Find and update the habit with the new title and description
       let updatedResult = await Habit.findByIdAndUpdate(
           {
               _id: id,
@@ -70,8 +76,6 @@ module.exports.editHabit = async function(req, res) {
               desc: newDesc
           }
       );
-      // console.log(updatedResult);
-      // req.flash('success', 'Habit Updated Successfully');
       return res.redirect('/');
       
   } catch (error) {
@@ -80,7 +84,7 @@ module.exports.editHabit = async function(req, res) {
   }
 }
 
-// this function will change the current status of habit
+// Function to toggle the status of a habit on a specific date
 module.exports.toggleStatus = async function(req, res) {
   try {
       let id = req.query.id;
@@ -88,32 +92,34 @@ module.exports.toggleStatus = async function(req, res) {
       const habit = await Habit.findById(id);
       console.log(date);
 
-      if(!habit) {
+      if (!habit) {
         console.log('Habit not present!');
         return res.redirect('/');
       }
 
-      // take out the date array of the habit.
+      // Take out the date array of the habit.
       let dates = habit.dates;
       let found = false;
-      // changes the complete argument accodingly.
-      dates.find((item, index) =>{
-          if(item.date == date){
-              if(item.complete === 'y'){
+      
+      // Change the complete status of the habit for the given date.
+      dates.find((item, index) => {
+          if (item.date == date) {
+              if (item.complete === 'y') {
                   item.complete = 'n';
-              }else if(item.complete === 'n'){
+              } else if (item.complete === 'n') {
                   item.complete = 'x';
-              }else if(item.complete === 'x'){
+              } else if (item.complete === 'x') {
                   item.complete = 'y';
               }
               found = true;
           }
       });
 
-      if(!found) {
-          dates.push({date : date, complete : 'y'});
+      if (!found) {
+          dates.push({ date: date, complete: 'y' });
       }
-      // at last save the dates.
+      
+      // Save the updated dates.
       habit.dates = dates;
       await habit.save();
       return res.redirect('/');

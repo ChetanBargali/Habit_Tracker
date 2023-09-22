@@ -1,6 +1,6 @@
 const express=require('express');
 const app=express();
-const port=7000;
+const port=9000;
 
 //import cookie-parser
 const cookieParser=require('cookie-parser');
@@ -15,9 +15,19 @@ const MongoStore = require('connect-mongo');
 
 const db=require('./config/mongoose');
 
+// require connect-flash
+const flash = require('connect-flash');
+const customMware=require('./config/flash_middleware');
+
 
 app.use(express.urlencoded({ extended: true })); //URL-encoded data is commonly used when sending form data from a web page to a server.
 app.use(cookieParser());
+
+app.use(expressLayouts);
+
+//extract style and script from sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScriptsgit', true);
 
 //set up view Engine
 app.set('view engine','ejs');
@@ -53,10 +63,13 @@ app.use(passport.session());
 //used as middleware when app is initialized it is called and user will set in the locals
 app.use(passport.setAuthenticatedUser);
 
+// flash middleware
+app.use(flash());
+app.use(customMware.setFlash);
 
 //use express router
 app.use('/', require('./routes'));
-app.use(expressLayouts);
+
 
 //make the app listen
 app.listen(port,function(err){

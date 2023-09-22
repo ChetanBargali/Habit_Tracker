@@ -34,9 +34,12 @@ input{
     outline: none;
     border: none;
     margin: 10px auto;
-    padding: 10px;
+    padding: 3px;
     border-radius: 5px;
 }
+
+
+  
 
 button{
     width: 60%;
@@ -51,6 +54,7 @@ button{
     font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
+    background-color: #20DF7F;
 }
 
 button:hover{
