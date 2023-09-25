@@ -20,8 +20,8 @@ Once you have the application up and running, you can start using it by followin
 
 ## Folder Structure
 ```
-Habit_Tracker
-     Habit Tracker
+
+    Habit_Tracker
     |
     |               |--->css
     |--->assets---->|--->img
