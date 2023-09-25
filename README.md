@@ -19,7 +19,7 @@ Once you have the application up and running, you can start using it by followin
 * To edit a habit, click on the "Edit" icon next to it.
 
 ## Folder Structure
-
+```
 Habit_Tracker
      Habit Tracker
     |
@@ -60,6 +60,6 @@ Habit_Tracker
     |--> package-lock.json
     |-->package.json
     |-->README.md
-
+```
 
 
