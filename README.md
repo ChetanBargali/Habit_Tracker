@@ -17,3 +17,6 @@ Once you have the application up and running, you can start using it by followin
 * To delete a habit, click on the "Delete" icon next to it.
 * To see today's habits, click on "Show Daily" button.
 * To edit a habit, click on the "Edit" icon next to it.
+
+## Folder Structure
+
