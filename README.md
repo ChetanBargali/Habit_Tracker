@@ -20,3 +20,46 @@ Once you have the application up and running, you can start using it by followin
 
 ## Folder Structure
 
+Habit_Tracker
+     Habit Tracker
+    |
+    |               |--->css
+    |--->assets---->|--->img
+    |               |---> js
+    |
+    |               |--->flash_middleware.js
+    |--->config---->|--->mongoose.js
+    |               |--->passport_local_strategy.js
+    |
+    |                  |-->habit_controller.js
+    |--->controllers-->|-->home_controller.js
+    |                  |-->users_controller.js
+    |
+    |               |-->habit.js
+    |--->models---->|
+    |               |-->user.js
+    |
+    |              
+    |               |-->habit.js
+    |--->routes---->|-->index.js
+    |               |-->users.js
+    |
+    |              
+    |              |--->_header.ejs
+    |              |--->daily_view.ejs
+    |              |--->forget_password.ejs
+    |--->views---->|--->home.ejs
+    |              |--->layout.ejs
+    |              |--->user-sign-in.ejs
+    |              |--->user-sign-up.ejs
+    |              |--->weekly_view.ejs
+    |
+    |-->node_modules
+    |-->.gitignore
+    |--> index.js
+    |--> package-lock.json
+    |-->package.json
+    |-->README.md
+
+
+
