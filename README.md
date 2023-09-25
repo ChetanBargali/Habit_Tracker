@@ -19,13 +19,13 @@ Once you have the application up and running, you can start using it by followin
 * To edit a habit, click on the "Edit" icon next to it.
 
 ## Folder Structure
-```
-
-    Habit_Tracker
-    |
-    |               |--->css
-    |--->assets---->|--->img
-    |               |---> js
+```                              |-->forget_password.js
+                                 |-->header.css
+    Habit_Tracker                |-->home.css
+    |                            |-->userSignIn.css
+    |               |--->css-----|-->userSignUp.css
+    |--->assets---->|--->img      
+    |               |---> js-----|-->home.js
     |
     |               |--->flash_middleware.js
     |--->config---->|--->mongoose.js
