@@ -62,7 +62,7 @@ body{
 .form-popup{
   display: none;
   position: fixed;
-  left: 20%;
+  left: 25%;
   top: 17%;
   z-index: 4;
   text-align: center;
@@ -217,7 +217,7 @@ form{
     position: relative;
 }
 .btn-showdetails{
-    margin: right 50px; ;
+    margin-left: 60px;
 }
 
 .btn-addHabit:hover{

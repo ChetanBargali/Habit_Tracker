@@ -1,6 +1,9 @@
+require('dotenv').config()
 const express=require('express');
 const app=express();
 const port=9000;
+
+
 
 //import cookie-parser
 const cookieParser=require('cookie-parser');
@@ -48,7 +51,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl:'mongodb://127.0.0.1:27017/Habit_Tracker',
+            mongoUrl:process.env.MONGO_URL ||'mongodb://127.0.0.1:27017/Habit_Tracker',
             autoRemove:'disabled'
         },
         function(err){

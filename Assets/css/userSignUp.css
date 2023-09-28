@@ -6,20 +6,20 @@ body{
 }
 
 h1{
-    
+    font-size: 3rem;
     color: #F0EDFF;
 }
 
 .signup{
     background: linear-gradient(to right, rgba(0, 65, 106, 0.6), rgba(228, 229, 230, 0.6));
     text-align: center;
-    height: 450px;
-    width: 480px;
+    height: 500px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 50%;
-    margin-top: 40px;
+    margin-left: 58%;
+    margin-top: 75px;
     border-radius: 10%;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
@@ -30,7 +30,7 @@ form{
 }
 
 input{
-    width: 60%;
+    width: 70%;
     height: 30px;
     outline: none;
     border: none;
@@ -40,7 +40,7 @@ input{
 }
 
 button{
-    width: 60%;
+    width: 70%;
     height: 40px;
     margin: 10px auto;
     color: #ffffff;
@@ -60,6 +60,7 @@ button:hover{
 }
 
 p a{
+    font-size: 1.2rem;
     text-decoration: none;
     color: #ffffff;
 }
