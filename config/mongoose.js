@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
+require('dotenv').config()
 //connect database
-mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/Habit_Tracker');
+mongoose.connect(process.env.MONGO_URL ||'mongodb://127.0.0.1:27017/Habit_Tracker');
 
 //acquire the connection(to check if it is sucessful)
 const db=mongoose.connection;
