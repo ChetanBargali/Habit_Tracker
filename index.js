@@ -49,7 +49,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl:'mongodb://127.0.0.1:27017/Habit_Tracker' || process.env.MONGO_URL,
+            mongoUrl:process.env.MONGO_URL,
             autoRemove:'disabled'
         },
         function(err){
