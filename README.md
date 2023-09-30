@@ -63,7 +63,7 @@ Habit_Tracker
     |-->package.json
     |-->README.md
 ```
-<<<<<<< HEAD
+
 
 ## Installation
 To run this application on your local machine, please follow these steps:
@@ -84,5 +84,4 @@ Open the application in your web browser by visiting the following URL:
 ```
 $ http://localhost:9000 
 ```
-=======
->>>>>>> 251def93c1f142ad1df78dadbcc3fee62c90da2e
+
