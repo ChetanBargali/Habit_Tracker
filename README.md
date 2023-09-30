@@ -1,3 +1,5 @@
+### Hosted link: [Habit Tracker](https://habit-tracker-75sd.onrender.com)
+
 # HabitTracker
 
 A web application which help you to create, update, delete and track your habit on daily basis. 
@@ -60,24 +62,4 @@ Habit_Tracker
     |-->package-lock.json
     |-->package.json
     |-->README.md
-```
-
-## Installation
-To run this application on your local machine, please follow these steps:
-
-Clone this repository using the following command:
-```
-$ git clone https://github.com/ChetanBargali/Habit_Tracker
-```
-Install the required dependencies using the following command:
-```
-$ npm install 
-```
-Start the application using the following command:
-```
-$ npm start 
-```
-Open the application in your web browser by visiting the following URL:
-```
-$ http://localhost:9000 
 ```
