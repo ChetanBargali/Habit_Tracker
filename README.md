@@ -63,3 +63,26 @@ Habit_Tracker
     |-->package.json
     |-->README.md
 ```
+<<<<<<< HEAD
+
+## Installation
+To run this application on your local machine, please follow these steps:
+
+Clone this repository using the following command:
+```
+$ git clone https://github.com/ChetanBargali/Habit_Tracker
+```
+Install the required dependencies using the following command:
+```
+$ npm install 
+```
+Start the application using the following command:
+```
+$ npm start 
+```
+Open the application in your web browser by visiting the following URL:
+```
+$ http://localhost:9000 
+```
+=======
+>>>>>>> 251def93c1f142ad1df78dadbcc3fee62c90da2e
