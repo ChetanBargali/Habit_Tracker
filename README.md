@@ -1,3 +1,5 @@
+### Hosted link: [Habit Tracker](https://habit-tracker-75sd.onrender.com)
+
 # HabitTracker
 
 A web application which help you to create, update, delete and track your habit on daily basis. 
